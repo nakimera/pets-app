@@ -1,16 +1,16 @@
 import { Header } from "../components/molecules/header";
-import { H2 } from "../components/atoms/text";
 import { ContentWrapper } from "./styles";
+import SearchFilter from "../components/organisms/filterSearch";
 
-export function HomePage() {
+export function FilterPage() {
   return (
     <>
       <Header />
       <ContentWrapper>
-        <H2>Pets</H2>
+        <SearchFilter />
       </ContentWrapper>
     </>
   );
 }
 
-export default HomePage;
+export default FilterPage;
