@@ -10,7 +10,7 @@ export default function SmallScreenLogo() {
 }
 
 const Wrapper = styled.div`
-  margin-left: 20px;
+  margin-left: 5%;
 
   @media (min-width: 768px) {
     display: none;

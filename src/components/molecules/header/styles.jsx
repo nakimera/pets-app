@@ -5,10 +5,11 @@ export const Wrapper = styled.div`
   display: flex;
   align-items: center;
   width: 100%;
-  height: 90px;
+  margin-top: 30px;
 
   @media (min-width: 768px) {
-    background: ${colors.yellow};
+    margin-top: 0;
+    height: 90px;
+    background: ${colors.lightYellow};
   }
 `;
-
