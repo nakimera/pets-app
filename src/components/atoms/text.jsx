@@ -19,9 +19,13 @@ export const H3 = styled.h3`
     font-size: 28px;
     font-weight: bold;
     color: ${props => props.white ? colors.white : colors.black}
-    
 
     @media (min-width: 768px){
         font-size: 26px;
     }
+`;
+
+export const H4 = styled.h4`
+    font-size: 18px;
+    font-weight: bold;
 `;

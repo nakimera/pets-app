@@ -1,10 +1,11 @@
 import styled from "styled-components";
 
 export const ContentWrapper = styled.div`
-    width: 90%;
-    margin: 0 auto;
+  width: 100%;
+  margin: 0 auto;
+  overflow-x: hidden;
 
-    @media (min-width: 768px){
-        width: 70%;
-    }
+  @media (min-width: 768px) {
+    width: 70%;
+  }
 `;

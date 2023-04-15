@@ -4,7 +4,7 @@ import { colors } from "../../../assets/colors";
 export const Wrapper = styled.div`
   display: flex;
   align-items: center;
-  width: calc(100% - 40px);
+  width: calc(95% - 40px);
   border-radius: 30px;
   background: ${colors.lightGrey};
   padding: 18px 20px;
