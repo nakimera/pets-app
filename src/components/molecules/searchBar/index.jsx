@@ -6,7 +6,7 @@ export function SearchBar() {
   return (
     <Wrapper>
       <SearchIcon />
-      <Input placeholder="Search for pets" />
+      <Input type="text" placeholder="Search for pets" />
     </Wrapper>
   );
 }
