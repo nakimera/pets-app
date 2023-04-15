@@ -1,9 +1,5 @@
 import styled from "styled-components";
 
-export const Text = styled.p`
-    font-size: 16px;
-`;
-
 export const H2 = styled.h2`
     font-size: 26px;
     font-weight: bold;

@@ -4,6 +4,7 @@ import FilterOptions from "../../molecules/filterOptions";
 import CategoriesSection from "../../molecules/categories";
 import { SectionWrapper } from "../../atoms/sectionWrapper";
 import PetDirectorySection from "../../molecules/petsDirectory";
+import {ResultsSection} from "../../molecules/results";
 
 export function SearchFilterSection() {
   return (
@@ -13,6 +14,7 @@ export function SearchFilterSection() {
         <SearchBar />
         <FilterOptions />
       </SectionWrapper>
+      <ResultsSection />
       <PetDirectorySection />
       <CategoriesSection />
     </>

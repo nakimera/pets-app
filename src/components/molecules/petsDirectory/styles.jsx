@@ -5,7 +5,7 @@ export const ContentWrapper = styled.div`
   display: flex;
   flex-wrap: wrap-reverse;
   width: 100%;
-  margin: 40px 0;
+  margin: 10px 0 40px 0;
 
   @media (min-width: 768px) {
     border-radius: 15px;
