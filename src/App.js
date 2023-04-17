@@ -1,4 +1,3 @@
-import './App.css';
 import FilterPage from './pages';
 
 function App() {

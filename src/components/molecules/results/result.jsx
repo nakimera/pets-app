@@ -8,11 +8,11 @@ import {
 import { ReactComponent as ArrowRight } from "../../../assets/icons/arrow-right.svg";
 
 export function ResultItem({ result }) {
-  const { name, imageurl } = result;
+  const { name, photoUrl } = result;
   return (
     <ResultItemWrapper className="result-list">
       <DetailsWrapper>
-        <Image src={imageurl} alt="pet-photo" />
+        <Image src={photoUrl} alt="pet-photo" />
         <span>{name}</span>
       </DetailsWrapper>
       <MobileViewButton><ArrowRight /></MobileViewButton>
