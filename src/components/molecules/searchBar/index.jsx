@@ -4,7 +4,7 @@ import Input from "../../atoms/input";
 
 export function SearchBar() {
   return (
-    <Wrapper>
+    <Wrapper id="search-bar">
       <SearchIcon />
       <Input type="text" placeholder="Search for pets" />
     </Wrapper>

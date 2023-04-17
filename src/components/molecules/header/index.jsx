@@ -1,12 +1,12 @@
 import { Wrapper } from "./styles";
-import SmallScreenLogo from "../../atoms/smallScreenLogo";
-import MediumToLargeScreenLogo from "../../atoms/mediumToLargeScreenLogo";
+import MobileLogo from "../../atoms/mobileLogo";
+import DesktopLogo from "../../atoms/desktopLogo";
 
 export function Header() {
   return (
     <Wrapper>
-      <SmallScreenLogo />
-      <MediumToLargeScreenLogo />
+      <MobileLogo />
+      <DesktopLogo />
     </Wrapper>
   );
 }

@@ -1,15 +1,12 @@
 import { Header } from "../components/molecules/header";
-import { ContentWrapper } from "./styles";
-import SearchFilterSection from "../components/organisms/filterSearch";
+import FilterPageContent from "../components/organisms/filterPageContainer";
 import { Footer} from "../components/atoms/footer";
 
 export function FilterPage() {
   return (
     <>
       <Header />
-      <ContentWrapper>
-        <SearchFilterSection />
-      </ContentWrapper>
+      <FilterPageContent />
       <Footer />
     </>
   );

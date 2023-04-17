@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { ReactComponent as Logo } from "../../assets/icons/pet-icon.svg";
 
-export default function MediumToLargeScreenLogo() {
+function DesktopLogo() {
   return (
     <Wrapper>
       <Logo />
@@ -9,7 +9,9 @@ export default function MediumToLargeScreenLogo() {
   );
 }
 
-const Wrapper = styled.div`
+export default DesktopLogo;
+
+const Wrapper = styled.figure`
   display: none;
 
   @media (min-width: 768px) {

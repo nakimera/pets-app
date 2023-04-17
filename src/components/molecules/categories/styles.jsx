@@ -2,9 +2,7 @@ import styled from "styled-components";
 import { colors } from "../../../assets/colors";
 
 export const CategoriesWrapper = styled.div`
-  min-width: 100%;
   display: -webkit-inline-box;
-  margin: 10px 0 35px 0;
 
   @media (min-width: 768px) {
     display: flex;
@@ -13,7 +11,6 @@ export const CategoriesWrapper = styled.div`
 `;
 
 export const CategoryItemWrapper = styled.div`
-  position: relative;
   margin-right: 10px;
   width: 200px;
 
@@ -29,14 +26,18 @@ export const Card = styled.div`
   height: 80px;
   border-radius: 10px;
   margin-bottom: 10px;
+  position: relative;
   display: flex;
   justify-content: center;
 
-  svg{
-    width: 60px;
-    height: 60px;
-    color: ${colors.lightBlue};
+  figure {
     position: absolute;
-    top: -15px;
+    top: -30px;
+
+    svg {
+      color: ${colors.lightBlue};
+      width: 60px;
+      height: 60px;
+    }
   }
 `;

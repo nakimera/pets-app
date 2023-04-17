@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { colors } from "../../../assets/colors";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.header`
   display: flex;
   align-items: center;
   width: 100%;

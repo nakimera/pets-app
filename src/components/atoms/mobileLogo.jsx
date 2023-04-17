@@ -1,7 +1,7 @@
 import styled from "styled-components";
 import { ReactComponent as Logo } from "../../assets/icons/pet-icon-small.svg";
 
-export default function SmallScreenLogo() {
+function MobileLogo() {
   return (
     <Wrapper>
       <Logo />
@@ -9,7 +9,9 @@ export default function SmallScreenLogo() {
   );
 }
 
-const Wrapper = styled.div`
+export default MobileLogo;
+
+const Wrapper = styled.figure`
   margin-left: 5%;
 
   @media (min-width: 768px) {

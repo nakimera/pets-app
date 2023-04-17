@@ -1,15 +1,10 @@
 import styled from "styled-components";
 import { colors } from "../../../assets/colors";
+import { Section } from "../../atoms/section";
 
-export const ContentWrapper = styled.div`
+export const ContentWrapper = styled(Section)`
   display: flex;
   flex-wrap: wrap-reverse;
-  width: 100%;
-  margin: 10px 0 40px 0;
-
-  @media (min-width: 768px) {
-    border-radius: 15px;
-  }
 `;
 
 export const Image = styled.img`
