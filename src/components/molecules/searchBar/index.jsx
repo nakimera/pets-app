@@ -1,19 +1,25 @@
-import { useState, useContext } from "react";
+import { useDispatch } from "react-redux";
 import { Wrapper } from "./styles";
-import {ReactComponent as SearchIcon} from "../../../assets/icons/search.svg";
+import { ReactComponent as SearchIcon } from "../../../assets/icons/search.svg";
 import Input from "../../atoms/input";
+import { filterPets } from "../../../store/slice";
 
 export function SearchBar() {
-  const [searchInput, setSearchInput] = useState('');
-  const handleSearch = e => {
+  const dispatch = useDispatch();
+
+  const handleSearch = (e) => {
     e.preventDefault();
-    console.log('-----------------hello');
-  }
+    dispatch(filterPets({ action: "search", value: e.target.value }));
+  };
 
   return (
     <Wrapper id="search-bar">
       <SearchIcon />
-      <Input type="text" placeholder="Search for pets" value={searchInput} onChange={() => console.log('-----')} />
+      <Input
+        type="text"
+        placeholder="Search for pets"
+        onChangeHandler={handleSearch}
+      />
     </Wrapper>
   );
 }

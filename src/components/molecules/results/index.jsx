@@ -1,4 +1,3 @@
-import { useContext } from 'react';
 import { H4 } from "../../atoms/text";
 import { Section } from "../../atoms/section";
 import PetProfile from "../petProfile";

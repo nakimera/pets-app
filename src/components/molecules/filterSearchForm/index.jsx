@@ -1,9 +1,12 @@
+
 import { H3 } from "../../atoms/text";
 import { Form, Wrapper } from "./styles";
 import SearchBar from "../searchBar";
 import Filters from "../filters";
 
+
 export function FilterSearchForm({ pets, handleFilterByType, handleSearch }) {
+
   return (
     <Wrapper>
       <H3>Pets</H3>
