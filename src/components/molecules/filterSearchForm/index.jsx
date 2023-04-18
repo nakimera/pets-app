@@ -3,16 +3,16 @@ import { Form, Wrapper } from "./styles";
 import SearchBar from "../searchBar";
 import Filters from "../filters";
 
-function FormSection({ pets }) {
+export function FilterSearchForm({ pets, handleFilterByType, handleSearch }) {
   return (
     <Wrapper>
       <H3>Pets</H3>
       <Form>
-        <SearchBar />
-        <Filters pets={pets} />
+        <SearchBar handleSearch={handleSearch} />
+        <Filters pets={pets} handleFilterByType={handleFilterByType} />
       </Form>
     </Wrapper>
   );
 }
 
-export default FormSection;
+export default FilterSearchForm;

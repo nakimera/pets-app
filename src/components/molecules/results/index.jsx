@@ -1,10 +1,11 @@
+import { useContext } from 'react';
 import { H4 } from "../../atoms/text";
 import { Section } from "../../atoms/section";
 import PetProfile from "../petProfile";
 import { ListWrapper } from "./styles";
 
-export function ResultsSection({ itemsToDisplay }) {
-  const emptyList = itemsToDisplay.length === 0;
+export function ResultsSection({ items }) {
+  const emptyList = items.length === 0;
 
   return (
     <Section>
@@ -13,7 +14,7 @@ export function ResultsSection({ itemsToDisplay }) {
         "Nothing to display"
       ) : (
         <ListWrapper>
-          {itemsToDisplay.map((result, index) => (
+          {items.map((result, index) => (
             <PetProfile key={index} result={result}></PetProfile>
           ))}
         </ListWrapper>

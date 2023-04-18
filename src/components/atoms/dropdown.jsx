@@ -1,23 +1,38 @@
-import { useState } from "react";
+import { useState, useContext } from "react";
 import styled from "styled-components";
 import { colors } from "../../assets/colors";
 import { Pill } from "./pill";
 import { ReactComponent as ArrowDown } from "../../assets/icons/chevron-down.svg";
+import { ListContext } from "../organisms/filterPageContainer";
 
 export function Dropdown(props) {
-  const { label, options } = props;
+  const { label,  handleFilter } = props;
   const [showOptions, setShowOptions] = useState(false);
+  const [newLabel, setLabel] = useState(label);
+
+  const {  getPetsToDisplay, types } = useContext(ListContext);
+
+  const handleOptionClick = (option) => {
+    handleFilter(option);
+    setLabel(option);
+    setShowOptions(false);
+    // setAction('filter');
+    // getPetsToDisplay({action: 'filter', value: option});
+    // getPetsToDisplay('filter', option);
+  };
 
   return (
     <Wrapper>
       <Pill onClick={() => setShowOptions(!showOptions)}>
-        {label}
+        {newLabel}
         <ArrowDown />
       </Pill>
       {showOptions && (
         <OptionsWrapper onMouseLeave={() => setShowOptions(false)}>
-          {options.map((option, index) => (
-            <span key={index}>{option}</span>
+          {types.map((option, index) => (
+            <span key={index} onClick={() => handleOptionClick(option)}>
+              {option}
+            </span>
           ))}
         </OptionsWrapper>
       )}
@@ -42,4 +57,8 @@ const OptionsWrapper = styled.div`
   flex-direction: column;
   padding: 10px;
   z-index: 2;
+
+  span {
+    cursor: pointer;
+  }
 `;
