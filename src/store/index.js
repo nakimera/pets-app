@@ -1,9 +1,9 @@
 import { configureStore } from '@reduxjs/toolkit'
-import petsSlice from './slice';
+import petsSlice from "./slice";
 
 const store = configureStore({
   reducer: {
-    pets: petsSlice
+    data: petsSlice
   }
 })
 

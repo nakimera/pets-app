@@ -4,23 +4,30 @@ import FilterSearchForm from "../../molecules/filterSearchForm";
 import CategoriesSection from "../../molecules/categories";
 import DirectorySection from "../../molecules/directory";
 import ResultsSection from "../../molecules/results";
-import { filterPets, getTypes, itemsSelector } from "../../../store/slice";
-import { fetchItems } from "../../server";
+import { useFetchItem } from "../../server";
+import {
+  getTypesAction,
+  petsSelector,
+  filterPetsAction,
+  getPetsAction,
+} from "../../../store/slice";
 
 export function FilterPageContainer() {
   const dispatch = useDispatch();
-  const { items, filteredItems, types } = useSelector(itemsSelector);
+
+  const { data } = useFetchItem();
+  const { types, itemsToDisplay } = useSelector(petsSelector);
 
   useEffect(() => {
-    dispatch(fetchItems());
-    dispatch(getTypes());
-    dispatch(filterPets({}));
-  }, [dispatch]);
+    dispatch(getPetsAction(data));
+    dispatch(getTypesAction());
+    dispatch(filterPetsAction());
+  }, [dispatch, data]);
 
   return (
     <>
-      <FilterSearchForm pets={items} types={types} />
-      <ResultsSection items={filteredItems} />
+      <FilterSearchForm pets={data} types={types} />
+      <ResultsSection items={itemsToDisplay} />
       <DirectorySection />
       <CategoriesSection />
     </>

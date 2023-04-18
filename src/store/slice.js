@@ -1,47 +1,37 @@
 import { createSlice } from "@reduxjs/toolkit";
 import { getPetsToDisplay, getPetTypes } from "../components/organisms/filterPageContainer/helpers";
 
-// initial state
-export const initialState = {
-    error: false,
-    loading: false,
-    items: [],
-    filteredItems: [],
+const initialState = {
+    data: [],
+    itemsToDisplay: [],
     types: []
-};
+}
 
-// our slice
-const itemSlice = createSlice({
-    name: "pets",
+const petsSlice = createSlice({
+    name: 'pets',
     initialState,
     reducers: {
-        getPets: (state, { payload }) => {
-            state.items = payload;
+        getPetsAction(state, action) {
+            state.data = action?.payload || []
         },
-        setError: (state) => {
-            state.error = true;
-        },
-        getTypes: (state) => {
+        getTypesAction: (state, action) => {
             state.types = getPetTypes({
-                items: state.items,
-            })
+                items: state?.data,
+            }) || []
         },
-        filterPets: (state, { payload }) => {
-            state.filteredItems = getPetsToDisplay({
-                items: state.items,
-                action: payload.action,
-                value: payload.value
-            })
+        filterPetsAction: (state, action) => {
+            state.itemsToDisplay = getPetsToDisplay({
+                items: state?.data,
+                action: action?.payload?.action,
+                value: action?.payload?.value
+            }) || []
         }
     },
-});
+})
 
-// the actions
-export const { getPets, setError, getTypes, filterPets } = itemSlice.actions;
+const { reducer, actions } = petsSlice;
+export const { getPetsAction, filterPetsAction, getTypesAction } = actions;
 
+export const petsSelector = (state) => state.data;
 
-// export the selector (".items" being same as in slices/index.js's "items: something")
-export const itemsSelector = (state) => state.pets;
-
-// export the default reducer
-export default itemSlice.reducer;
+export default reducer;

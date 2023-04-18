@@ -2,16 +2,16 @@ import { useSelector, useDispatch } from "react-redux";
 import { Wrapper } from "./styles";
 import { Pill } from "../../atoms/pill";
 import Dropdown from "../../atoms/dropdown";
-import { filterPets } from "../../../store/slice";
-import { itemsSelector } from "../../../store/slice";
+import { filterPetsAction } from "../../../store/slice";
+import { petsSelector } from "../../../store/slice";
 
 function Filters() {
   const dispatch = useDispatch();
   const categories = [];
-  const { types } = useSelector(itemsSelector);
+  const { types } = useSelector(petsSelector);
 
   const handleFilterByType = (option) => {
-    dispatch(filterPets({ action: 'filter', value: option }));
+    dispatch(filterPetsAction({ action: 'filter', value: option }));
   };
 
   return (

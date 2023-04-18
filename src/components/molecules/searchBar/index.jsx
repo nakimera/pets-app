@@ -2,14 +2,14 @@ import { useDispatch } from "react-redux";
 import { Wrapper } from "./styles";
 import { ReactComponent as SearchIcon } from "../../../assets/icons/search.svg";
 import Input from "../../atoms/input";
-import { filterPets } from "../../../store/slice";
+import { filterPetsAction } from "../../../store/slice";
 
 export function SearchBar() {
   const dispatch = useDispatch();
 
   const handleSearch = (e) => {
     e.preventDefault();
-    dispatch(filterPets({ action: "search", value: e.target.value }));
+    dispatch(filterPetsAction({ action: "search", value: e.target.value }));
   };
 
   return (
