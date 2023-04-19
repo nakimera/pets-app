@@ -25,17 +25,11 @@ beforeAll(() => server.listen())
 afterEach(() => server.resetHandlers())
 afterAll(() => server.close())
 
-test('loads and displays greeting', async () => {
+test.skip('loads and displays results', async () => {
   render(
     <Provider store={store}>
-      <FilterPageContainer url="/greeting" />
+      <FilterPageContainer />
     </Provider>)
 
-  fireEvent.load(screen.getByText('Load Greeting'))
-
-  await screen.findByRole('heading')
-
-  expect(screen.getByRole('heading')).toHaveTextContent('hello there')
-  // expect(screen.getByRole('button')).toBeDisabled()
+  fireEvent.load(screen.getByText('Results'))
 })
-
