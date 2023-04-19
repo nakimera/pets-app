@@ -4,7 +4,7 @@ import FilterSearchForm from "../../molecules/filterSearchForm";
 import CategoriesSection from "../../molecules/categories";
 import DirectorySection from "../../molecules/directory";
 import ResultsSection from "../../molecules/results";
-import { useFetchItem } from "../../server";
+import { useFetchItem } from "../../../server";
 import {
   getTypesAction,
   petsSelector,

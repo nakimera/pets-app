@@ -6,7 +6,7 @@ export function FilterPage() {
   return (
     <>
       <Header />
-      <FilterPageContent />
+      {/* <FilterPageContent /> */}
       <Footer />
     </>
   );
