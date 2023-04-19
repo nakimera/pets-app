@@ -11,31 +11,16 @@ const pet = {
     photoUrl: "https://i.imgur.com/wpfirW7l.jpg"
 };
 
-// describe("Pet profile", () => {
-//     const renderProfile = () =>
-//         render(
-//             <PetProfile
-//                 result={pet}
-//             />
-//         );
-//     it("accepts user account props", () => {
-//         renderProfile();
-//         // render(<PetProfile result={pet} />);
-//         expect(screen.getByText(/Daamin/i)).toBeInTheDocument()
-//     });
-// });
-
-
 describe("Profile", () => {
     const renderProfile = () =>
-      render(
-        <PetProfile
-          result={pet}
-        />
-      );
-  
+        render(
+            <PetProfile
+                result={pet}
+            />
+        );
+
     test("renders pets profile", () => {
-      renderProfile();
-      expect(screen.getByText(/John Doe/i)).toBeInTheDocument();
+        renderProfile();
+        expect(screen.getByText(/Daamin/i)).toBeInTheDocument();
     });
-  });
+});

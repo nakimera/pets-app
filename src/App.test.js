@@ -1,13 +1,8 @@
-import { shallow } from 'enzyme';
+import { render, screen } from '@testing-library/react';
 import App from './App';
-import Header from '../src/components/molecules/header';
 
-it("renders without crashing", () => {
-  shallow(<App />);
+test('renders title', () => {
+  render(<App />);
+  const linkElement = screen.getByText(/pets/i);
+  expect(linkElement).toBeInTheDocument();
 });
-
-// it("renders header", () => {
-//   const app = shallow(<App />);
-//   const header = <Header />;
-//   expect(app.contains(header)).toEqual(true);
-// });
