@@ -10,3 +10,5 @@ export function Header() {
     </Wrapper>
   );
 }
+
+export default Header;

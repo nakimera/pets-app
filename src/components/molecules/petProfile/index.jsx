@@ -8,7 +8,7 @@ import {
 import { Button } from "../../atoms/button";
 import { ReactComponent as ArrowRight } from "../../../assets/icons/arrow-right.svg";
 
-function PetProfile({ result }) {
+export function PetProfile({ result }) {
   const { name, photoUrl } = result;
   return (
     <PetProfileWrapper className="result-list">
